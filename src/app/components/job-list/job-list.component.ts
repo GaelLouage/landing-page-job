@@ -28,11 +28,7 @@ public jobList:Jobs[] = []as Jobs[];
   }
 
   ngOnInit(): void {
-    if(this.isSearching === "") {
       this.refreshList();
-     } else {
-      this.jobList = this.jobList.filter(x => x.languages.includes(this.isSearching) || x.tools.includes(this.isSearching));
-     }
   }
  public getCard(item:Jobs) {
       this.tempJob = item;
@@ -42,15 +38,14 @@ public jobList:Jobs[] = []as Jobs[];
   }
  public filteredList():Jobs[]{
   if(this.isSearching === "") {
-    
-    return this.jobList.map(x => x);
+    return this.jobList;
    } else {
     return this.jobList.filter(x => x.languages.includes(this.isSearching) || x.tools.includes(this.isSearching));
    }
  }
   public refreshList(){
     this.jobservice.getJobs().subscribe(data => {
-      return this.jobList = data;
+       this.jobList = data;
     })
   }
 }
