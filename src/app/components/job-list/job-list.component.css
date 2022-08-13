@@ -1,0 +1,45 @@
+img {
+    background-color:  hsl(180, 29%, 50%);
+    width: 100%;
+    max-height: 7em;
+    background-repeat: no-repeat;
+    background-size: fill;
+}
+header {
+    width: 100%;
+}
+.cards {
+    margin-top: 2em;
+}
+/* select */
+.custom-select {
+    width: 90.5%;
+    display: flex;
+    justify-content: flex-end;
+}
+select {
+ background-color: white;
+  border: 1px solid hsl(180, 29%, 50%);;
+  border-radius: 4px;
+  font: inherit;
+  line-height: 1.5em;
+  margin-top: 2em;
+  padding: 0.5em 3.5em 0.5em 1em;
+   
+}
+select:focus {
+    outline: none;
+}
+option {
+    padding: 2em;
+}
+@media only screen and (max-width: 1000px){
+    .cards {
+        margin-top: 5em;
+    }
+    select {
+        width: 90.5%;
+
+      
+    }
+}

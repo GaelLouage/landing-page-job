@@ -1,0 +1,37 @@
+<!--  [ngStyle]="isClicked ?  titleSyles : titleSyless" -->
+<!-- [ngStyle]="isJob.company === isJobTwo.company ?  style : styleTwo" -->
+<div class="container" (click)="getItem($event)" 
+[ngStyle]="isJob.company === isJobTwo.company ? styles : styleTwo">
+    <img [src]="img">
+    <div>
+        <!-- top -->
+        <div class="top">
+            <p>{{company}}</p>
+            <p *ngIf="newT">NEW!</p>
+            <p *ngIf="featured" [ngStyle]="{'background-color':'hsl(180, 14%, 20%)'}">FEATURED</p>
+        </div>
+        <!-- mid -->
+        <div class="mid">
+            <p id="position">{{position}}</p>
+            <div class="right">
+                <p>{{postedAt}}</p>
+                <div class="bullet"></div>
+                <p>{{contract}}</p>
+                <div class="bullet"></div>
+                <p>{{location}}</p>
+            </div>
+        </div>
+        <!-- bottom -->   
+    </div>
+    <div class="horizontal-line"></div>
+    <!-- end -->
+    <div class="end" >
+        <div *ngFor="let item of languages">
+            <p >{{item}}</p>
+        </div>
+        <div *ngFor="let item of tools">
+            <p >{{item}}</p>
+        </div>
+    </div>
+</div>
+<!-- filterbox -->
