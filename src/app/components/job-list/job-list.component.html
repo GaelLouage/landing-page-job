@@ -1,4 +1,8 @@
-
+<div class="search-box">
+    <i class="fa fa-search" (mouseover)="changeClass($event)" 
+    [ngStyle]="!searchHover ? iconSearchBordersEmpty  : iconSearchBorders"></i>
+    <input type="text" [ngStyle]="searchHover ? animateClass : animateClassEmpty " [(ngModel)]="search" placeholder="search by company or by position..." #searchInput>
+</div>
 <div class="custom-select">
     <div class="filter-items" >
         <div class="content">
@@ -9,17 +13,16 @@
     </div>
     </div>
     <div  *ngIf="filterSearch.length > 0">
-        <button class="btn-refresh" type="radio" (click)="resetJobs(filter, default)">Refresh</button>
+        <button class="btn-refresh"   (click)="resetJobs(filter, default)">Refresh</button>
         </div>
-   
         <select (change)="getLanguage($event)" #filter>
             <option selected disabled #default value="filter by language">filter by language</option>
             <option *ngFor="let item of languages" [value]="item">{{item}}</option>
         </select>
-            <span class="tooltiptext">mulitple choice</span>
+        <span class="tooltiptext">multiple choice</span>
 </div>
 <div class="cards">
-    <app-job-card *ngFor="let item of filteredList(); let i = index" (getInfo)="getCard(item)" 
+    <app-job-card *ngFor="let item of getJobList(); let i = index" (getInfo)="getCard(item)" 
     [isJob]="tempJob"
     [isJobTwo]="item"
     [styles]="border"

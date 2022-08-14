@@ -100,6 +100,7 @@ img {
     border: none;
     font-weight: bold;
     border-radius: 0.2em;
+    cursor:pointer;
 }
 @media only screen and (max-width: 1000px) {
     .container {

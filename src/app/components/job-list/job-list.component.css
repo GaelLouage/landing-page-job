@@ -1,4 +1,31 @@
+.search-box {
+    position: absolute;
+    top:2px;
+    left: 38%; 
+ 
 
+}
+.search-box i {
+    background-color: hsl(180, 14%, 20%);
+    color: white;
+    padding: 1em 1em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    background-color: white;
+    border: 1px solid hsl(180, 29%, 50%);
+    border-radius: 4px;
+    font: inherit;
+    line-height: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    max-height: 3em;
+    outline: none;
+    width: 0;
+}
 .cards {
     margin-top: 2em;
 }
@@ -21,7 +48,7 @@ select {
   margin-bottom: 1.2em;
   padding: 0.5em 3.5em 0.5em 1em;
   max-height: 3em;
-   
+   width: 15em;
 }
 select:focus {
     outline: none;
@@ -37,6 +64,7 @@ option {
     border: none;
     font-weight: bold;
     border-radius: 0.2em;
+    cursor: pointer;
 }
 .filter-items {
     display: flex;
@@ -75,12 +103,54 @@ option {
     font-weight: bold;
     border-radius: 0.2em;
     cursor: pointer;
+  
 }
 .dots {
     position: absolute;
     top: 1px;
 }
+@media only screen and (max-width: 1600px){
+    .search-box {
+        position: absolute;
+        top:2px;
+        left: 35%; 
+    }
+    .btn-delete {
+        background-color: hsl(180, 29%, 50%) ;
+        color:hsl(180, 31%, 95%) ;
+        margin-left: 1em;
+        padding: 1em;
+        border: none;
+        font-weight: bold;
+        border-radius: 0.2em;
+        cursor: pointer;
+        
+      
+    }
 
+    .filter-items .content {
+        display: flex;
+        flex-wrap: wrap;
+     justify-content: center;
+        align-self: center;
+        position: relative;
+    }
+    .filter-items .items {
+        display: flex;
+        background-color: white;
+        justify-content: space-around;
+        width:  8em;
+    
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .search-box {
+        position: absolute;
+        top:2px;
+        left: 30%; 
+    }
+
+}
 @media only screen and (max-width: 1000px){
     .cards {
         margin-top: 5em;
@@ -106,6 +176,20 @@ option {
         grid-template-columns: repeat(3,1fr);
         position: relative;
     }
+    .search-box {
+        position: absolute;
+        top:2px;
+        left: 10%; 
+    }
+   
+}
+@media only screen and (max-width:600px){
+    .search-box {
+        position: absolute;
+        top:-2.5%;
+        left: 2em; 
+    }
+   
 }
 select:hover~.tooltiptext {
     display: block;
@@ -126,3 +210,9 @@ select:hover~.tooltiptext {
     border-bottom: 7px solid transparent;
     margin: 13px 0 0 -22px;
  }
+
+
+ @keyframes setWidth {
+    from {width: 0;}
+    to {  width: 20em;}
+  }
