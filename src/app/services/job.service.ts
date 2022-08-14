@@ -7,7 +7,7 @@ import { Jobs } from '../models/jobs';
   providedIn: 'root'
 })
 export class JobService {
-private readonly baseUrl = "../assets/data.json";
+private readonly baseUrl = "./assets/data.json";
   constructor(public http:HttpClient) { }
 
   public getJobs():Observable<Jobs[]> {
