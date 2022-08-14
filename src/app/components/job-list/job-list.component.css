@@ -1,13 +1,4 @@
-img {
-    background-color:  hsl(180, 29%, 50%);
-    width: 100%;
-    max-height: 7em;
-    background-repeat: no-repeat;
-    background-size: fill;
-}
-header {
-    width: 100%;
-}
+
 .cards {
     margin-top: 2em;
 }
@@ -17,6 +8,9 @@ header {
     display: flex;
     justify-content: flex-end;
 }
+.custom-select div {
+    margin: 2em 2em 0 0;
+}
 select {
  background-color: white;
   border: 1px solid hsl(180, 29%, 50%);;
@@ -24,7 +18,9 @@ select {
   font: inherit;
   line-height: 1.5em;
   margin-top: 2em;
+  margin-bottom: 1.2em;
   padding: 0.5em 3.5em 0.5em 1em;
+  max-height: 3em;
    
 }
 select:focus {
@@ -33,13 +29,100 @@ select:focus {
 option {
     padding: 2em;
 }
+.btn-refresh {
+    background-color: hsl(180, 29%, 50%) ;
+    color:hsl(180, 31%, 95%) ;
+    margin-left: 1em;
+    padding: 1em 2.5em;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.2em;
+}
+.filter-items {
+    display: flex;
+}
+.filter-items .content {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(6,1fr);
+    position: absolute;
+    left: 1px;
+    top: 9%;
+    left: 10%;
+    
+}
+.filter-items .items {
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    width:  8em;
+
+}
+.filter-items .items p {
+    align-self: flex-start;
+    width: 100%;
+    align-items: flex-start;
+    align-self: center;
+   padding-left: 15px;
+   color:hsl(180, 29%, 50%)  ;
+} 
+.btn-delete, .tooltiptext {
+    background-color: hsl(180, 29%, 50%) ;
+    color:hsl(180, 31%, 95%) ;
+    margin-left: 1em;
+    padding: 1em;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+.dots {
+    position: absolute;
+    top: 1px;
+}
+
 @media only screen and (max-width: 1000px){
     .cards {
         margin-top: 5em;
     }
     select {
         width: 90.5%;
-
-      
+    }
+    .custom-select {
+        width: 92%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        margin:0 auto;
+    }
+    .btn-refresh {
+        width: 30.6em;
+        margin-left: 2em;
+    }
+    .filter-items .content {
+        display: grid;
+        justify-content: flex-start;
+        grid-template-columns: repeat(3,1fr);
+        position: relative;
     }
 }
+select:hover~.tooltiptext {
+    display: block;
+}
+.tooltiptext {
+ display: none;
+ transition: 1px;
+ position: absolute;
+ right: 50px;
+}
+.tooltiptext:before {
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 13px solid  hsl(180, 29%, 50%) ;
+    border-bottom: 7px solid transparent;
+    margin: 13px 0 0 -22px;
+ }

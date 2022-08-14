@@ -1,0 +1,39 @@
+<button class="go-back" (click)="goBack()">Go Back</button>
+
+<div class="container" >
+
+    <div>
+        <!-- top -->
+        <div class="top">
+            <p>{{job.company}}</p>
+            <p *ngIf="newT">NEW!</p>
+            <p *ngIf="featured" [ngStyle]="{'background-color':'hsl(180, 14%, 20%)'}">FEATURED</p>
+        </div>
+        <!-- mid -->
+        <div class="mid">
+            <p id="position">{{job.position}}</p>
+            <div class="right">
+                <p>{{job.postedAt}}</p>
+                <div class="bullet"></div>
+                <p>{{job.contract}}</p>
+                <div class="bullet"></div>
+                <p>{{job.location}}</p>
+                <div class="bullet"></div>
+                <p>{{job.level}}</p>
+            </div>
+        </div>
+        <img [src]="job.logo">
+        <!-- bottom -->   
+    </div>
+    <div class="horizontal-line"></div>
+    <!-- end -->
+    <div class="end" >
+        <div *ngFor="let item of job.languages">
+            <p >{{item}}</p>
+        </div>
+        <div *ngFor="let item of job.tools">
+            <p >{{item}}</p>
+        </div>
+    </div>
+</div>
+<!-- filterbox -->

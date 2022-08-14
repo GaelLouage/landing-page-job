@@ -26,16 +26,10 @@ export class JobCardComponent implements OnInit {
  @Input() styles:object= {};
  @Input() styleTwo:object= {};
  @Input() isJob:Jobs = {} as Jobs;
-   @Input() isJobTwo:Jobs = {} as Jobs;
-// public titleSyles = {
-//   color: "blue",
-//   fontStyle :"italic"
-// };
-// public titleSyless = {
-//   color: "red",
-//   fontStyle :"italic"
-// };
-// public isClicked:boolean = false;
+ @Input() isJobTwo:Jobs = {} as Jobs;
+
+public block:string ="block";
+public none:string = "none";
 @Output() getInfo = new EventEmitter<any>();
   constructor() { }
 

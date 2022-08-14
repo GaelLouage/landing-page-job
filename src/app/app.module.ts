@@ -6,13 +6,15 @@ import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobCardComponent } from './components/job-card/job-card.component';
 import { JobListComponent } from './components/job-list/job-list.component';
+import { JobDetailComponent } from './components/job-detail/job-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     JobCardComponent,
-    JobListComponent
+    JobListComponent,
+    JobDetailComponent
   ],
   imports: [
     BrowserModule,

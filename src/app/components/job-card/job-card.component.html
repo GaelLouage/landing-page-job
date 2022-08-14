@@ -32,6 +32,7 @@
         <div *ngFor="let item of tools">
             <p >{{item}}</p>
         </div>
+        <i class="fa fa-spinner fa-spin" [style.display]="isJob.company === isJobTwo.company ? block : none"></i>
     </div>
 </div>
 <!-- filterbox -->

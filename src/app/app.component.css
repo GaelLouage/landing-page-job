@@ -1,0 +1,10 @@
+header {
+    width: 100%;
+}
+img {
+    background-color:  hsl(180, 29%, 50%);
+    width: 100%;
+    max-height: 7em;
+    background-repeat: no-repeat;
+    background-size: fill;
+}

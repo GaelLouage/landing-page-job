@@ -1,11 +1,22 @@
-<header>
-    <img src="./assets/images/bg-header-desktop-1.png">
-</header>
+
 <div class="custom-select">
-        <select (change)="getLanguage($event)">
-            <option selected>filter by language</option>
-            <option *ngFor="let item of languages"  [value]="item">{{item}}</option>
+    <div class="filter-items" >
+        <div class="content">
+        <div class="items" *ngFor="let item of filterSearch">
+            <p >{{item}}</p>
+            <button class="btn-delete" (click)="deleteFilterItem(item)">X</button>
+        </div>
+    </div>
+    </div>
+    <div  *ngIf="filterSearch.length > 0">
+        <button class="btn-refresh" type="radio" (click)="resetJobs(filter, default)">Refresh</button>
+        </div>
+   
+        <select (change)="getLanguage($event)" #filter>
+            <option selected disabled #default value="filter by language">filter by language</option>
+            <option *ngFor="let item of languages" [value]="item">{{item}}</option>
         </select>
+            <span class="tooltiptext">mulitple choice</span>
 </div>
 <div class="cards">
     <app-job-card *ngFor="let item of filteredList(); let i = index" (getInfo)="getCard(item)" 
@@ -24,6 +35,6 @@
     [contract]="item.contract"
     [location]="item.location"
     ></app-job-card>
-
 </div>
+
 
